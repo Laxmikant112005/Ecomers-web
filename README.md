@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
@@ -20,4 +20,3 @@ If you are developing a production application, we recommend using TypeScript wi
 =======
 # Ecomers-web
 Ecomers-web
->>>>>>> df5404c328996fe5d797cbbf74f75de5c00ff42a
