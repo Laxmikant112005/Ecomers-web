@@ -8,6 +8,10 @@ import Cicon from './Cicon.png'
 import Cart_icon from './cart_icon.svg'
 import Micon from './Micon.png'
 import Bicon from './Bicon.png'
+import tshert from './teshert_w.webp'
+import Shirt_1 from './Shirt_1.webp'
+import Shirt_2 from'./Shirt_2.webp'
+import Shirt_3 from './Shirt_3.webp'    
 export const assets = {
     Logo,
     Jacket_1,
@@ -17,7 +21,10 @@ export const assets = {
     Sicon,
     Cicon,
     Cart_icon,
-    Micon
+    Micon,
+    Bicon,
+    tshert,
+    Shirt_1,
+    Shirt_2,
+    Shirt_3
 };
-
-

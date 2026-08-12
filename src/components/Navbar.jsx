@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { assets } from '../assets/assets';
 import { Link, NavLink } from 'react-router-dom';
 
+import '../styles/Nev.css';
+
 const Navbar = () => {
 
   const [visible, setVisible] = useState(false);

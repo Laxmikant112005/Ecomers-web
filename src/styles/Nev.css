@@ -1,0 +1,727 @@
+/* =========================================================
+   ECART NAVBAR
+========================================================= */
+
+.navbar {
+  position: relative;
+
+  width: 100%;
+  height: 82px;
+
+  padding: 0 7%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: #ffffff;
+
+  border-bottom: 1px solid #eeeeee;
+
+  z-index: 1000;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.navbar-logo {
+  position: relative;
+
+  color: #202020;
+
+  text-decoration: none;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 25px;
+
+  font-weight: 600;
+
+  letter-spacing: 5px;
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.navbar-logo:hover {
+  opacity: 0.65;
+
+  transform: translateY(-1px);
+}
+
+
+/* Small line underneath */
+
+.navbar-logo::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -7px;
+
+  width: 20px;
+  height: 1px;
+
+  background: #222;
+
+  transition:
+    width 0.35s ease;
+}
+
+
+.navbar-logo:hover::after {
+  width: 100%;
+}
+
+
+/* =========================================================
+   NAVIGATION LINKS
+========================================================= */
+
+.navbar-links {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 42px;
+
+  margin: 0;
+
+  padding: 0;
+
+  list-style: none;
+}
+
+
+.nav-link {
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 3px;
+
+  color: #555;
+
+  text-decoration: none;
+
+  font-size: 11px;
+
+  font-weight: 500;
+
+  letter-spacing: 1.2px;
+
+  text-transform: uppercase;
+
+  transition:
+    color 0.3s ease;
+}
+
+
+.nav-link p {
+  margin: 0;
+
+  transition:
+    transform 0.3s ease;
+}
+
+
+.nav-link hr {
+  width: 0;
+
+  height: 1px;
+
+  margin: 0;
+
+  padding: 0;
+
+  border: none;
+
+  background: #222;
+
+  transition:
+    width 0.35s ease;
+}
+
+
+.nav-link:hover {
+  color: #111;
+}
+
+
+.nav-link:hover p {
+  transform: translateY(-2px);
+}
+
+
+/* Active page */
+
+.nav-link.active {
+  color: #111;
+}
+
+
+.nav-link.active hr {
+  width: 100%;
+}
+
+
+/* =========================================================
+   RIGHT SIDE ACTIONS
+========================================================= */
+
+.navbar-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+}
+
+
+/* =========================================================
+   ICON BUTTONS
+========================================================= */
+
+.nav-icon-button,
+.cart-container {
+  position: relative;
+
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: inherit;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  border-radius: 50%;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.nav-icon-button:hover,
+.cart-container:hover {
+  background: #f5f5f5;
+
+  transform: translateY(-2px);
+}
+
+
+.nav-icon-button img,
+.cart-container img {
+  width: 19px;
+  height: 19px;
+
+  object-fit: contain;
+
+  transition:
+    transform 0.3s ease;
+}
+
+
+.nav-icon-button:hover img,
+.cart-container:hover img {
+  transform: scale(1.08);
+}
+
+
+/* =========================================================
+   PROFILE
+========================================================= */
+
+.profile-container {
+  position: relative;
+}
+
+
+.profile-dropdown {
+  position: absolute;
+
+  top: calc(100% + 15px);
+
+  right: -15px;
+
+  width: 165px;
+
+  padding: 10px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+
+  background: rgba(255, 255, 255, 0.97);
+
+  border: 1px solid #eeeeee;
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.10);
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  transform:
+    translateY(-8px)
+    scale(0.97);
+
+  transform-origin: top right;
+
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease,
+    transform 0.25s ease;
+
+  backdrop-filter: blur(12px);
+}
+
+
+.profile-container:hover .profile-dropdown {
+  opacity: 1;
+
+  visibility: visible;
+
+  transform:
+    translateY(0)
+    scale(1);
+}
+
+
+.profile-dropdown a,
+.profile-dropdown button {
+  width: 100%;
+
+  padding: 11px 13px;
+
+  border: none;
+
+  border-radius: 7px;
+
+  background: transparent;
+
+  color: #444;
+
+  text-align: left;
+
+  text-decoration: none;
+
+  font-family: inherit;
+
+  font-size: 11px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    padding-left 0.25s ease;
+}
+
+
+.profile-dropdown a:hover,
+.profile-dropdown button:hover {
+  background: #f5f5f5;
+
+  color: #111;
+
+  padding-left: 17px;
+}
+
+
+/* =========================================================
+   CART
+========================================================= */
+
+.cart-container {
+  position: relative;
+}
+
+
+.cart-count {
+  position: absolute;
+
+  top: -2px;
+  right: -3px;
+
+  min-width: 15px;
+  height: 15px;
+
+  padding: 0 4px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: #fff;
+
+  background: #222;
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
+
+.menu-button {
+  display: none;
+
+  border: none;
+
+  background: transparent;
+}
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+.mobile-menu {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 2000;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  backdrop-filter: blur(15px);
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  pointer-events: none;
+
+  transform:
+    translateX(100%);
+
+  transition:
+    opacity 0.35s ease,
+    visibility 0.35s ease,
+    transform 0.45s cubic-bezier(.77,0,.18,1);
+}
+
+
+.mobile-menu-visible {
+  opacity: 1;
+
+  visibility: visible;
+
+  pointer-events: auto;
+
+  transform:
+    translateX(0);
+}
+
+
+/* =========================================================
+   MOBILE CONTENT
+========================================================= */
+
+.mobile-menu-content {
+  width: 100%;
+  height: 100%;
+
+  padding:
+    30px 25px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  justify-content: center;
+
+  gap: 8px;
+}
+
+
+/* =========================================================
+   MOBILE BACK
+========================================================= */
+
+.mobile-back {
+  position: absolute;
+
+  top: 28px;
+  left: 25px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  cursor: pointer;
+
+  color: #777;
+
+  font-size: 11px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1.5px;
+}
+
+
+.mobile-back img {
+  width: 17px;
+  height: 17px;
+}
+
+
+.mobile-back p {
+  margin: 0;
+}
+
+
+/* =========================================================
+   MOBILE NAV LINKS
+========================================================= */
+
+.mobile-nav-link {
+  position: relative;
+
+  padding: 10px 0;
+
+  color: #222;
+
+  text-decoration: none;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 43px;
+
+  font-weight: 400;
+
+  letter-spacing: -1px;
+
+  transform: translateY(15px);
+
+  opacity: 0;
+
+  transition:
+    color 0.3s ease,
+    transform 0.4s ease,
+    opacity 0.4s ease;
+}
+
+
+/* Animate links when menu opens */
+
+.mobile-menu-visible .mobile-nav-link {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+.mobile-menu-visible .mobile-nav-link:nth-child(2) {
+  transition-delay: 0.08s;
+}
+
+
+.mobile-menu-visible .mobile-nav-link:nth-child(3) {
+  transition-delay: 0.13s;
+}
+
+
+.mobile-menu-visible .mobile-nav-link:nth-child(4) {
+  transition-delay: 0.18s;
+}
+
+
+.mobile-menu-visible .mobile-nav-link:nth-child(5) {
+  transition-delay: 0.23s;
+}
+
+
+.mobile-nav-link:hover {
+  color: #888;
+
+  padding-left: 10px;
+}
+
+
+/* Active mobile link */
+
+.mobile-nav-link.active {
+  font-style: italic;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .navbar {
+    height: 75px;
+
+    padding: 0 5%;
+  }
+
+
+  .navbar-links {
+    gap: 25px;
+  }
+
+
+  .navbar-actions {
+    gap: 10px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .navbar {
+    height: 70px;
+
+    padding: 0 20px;
+  }
+
+
+  .navbar-logo {
+    font-size: 21px;
+
+    letter-spacing: 4px;
+  }
+
+
+  /* Hide desktop links */
+
+  .navbar-links {
+    display: none;
+  }
+
+
+  /* Show mobile menu button */
+
+  .menu-button {
+    display: flex;
+  }
+
+
+  .navbar-actions {
+    gap: 5px;
+  }
+
+
+  .nav-icon-button,
+  .cart-container {
+    width: 34px;
+    height: 34px;
+  }
+
+
+  /* Hide profile dropdown on mobile */
+
+  .profile-container {
+    display: none;
+  }
+
+
+  .mobile-nav-link {
+    font-size: 38px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .navbar {
+    padding: 0 15px;
+  }
+
+
+  .navbar-logo {
+    font-size: 19px;
+
+    letter-spacing: 3px;
+  }
+
+
+  .mobile-nav-link {
+    font-size: 34px;
+  }
+
+
+  .mobile-menu-content {
+    padding-left: 22px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .navbar *,
+  .mobile-menu,
+  .mobile-nav-link {
+    animation: none !important;
+
+    transition: none !important;
+  }
+
+}
