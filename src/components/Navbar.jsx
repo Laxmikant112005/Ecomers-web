@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { assets } from '../assets/assets';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 
 import '../styles/Nev.css';
 
-const Navbar = () => {
+const Navbar = ({ login, setLogin }) => {
 
   const [visible, setVisible] = useState(false);
+
+  const navigate = useNavigate();
 
   return (
     <nav className="navbar">
@@ -53,11 +55,23 @@ const Navbar = () => {
       </ul>
 
 
-      {/* ================= RIGHT SIDE ICONS ================= */}
+      {/* ================= RIGHT SIDE ================= */}
 
       <div className="navbar-actions">
 
-        {/* Search */}
+        {/* ================= LOGIN ================= */}
+
+        {!login && (
+          <Link
+            to="/login"
+            className="nav-link"
+          >
+            Login
+          </Link>
+        )}
+
+
+        {/* ================= SEARCH ================= */}
 
         <button
           className="nav-icon-button"
@@ -71,41 +85,49 @@ const Navbar = () => {
         </button>
 
 
-        {/* Profile */}
+        {/* ================= PROFILE ================= */}
 
-        <div className="profile-container">
+        {login && (
+          <div className="profile-container">
 
-          <button
-            className="nav-icon-button profile-button"
-            type="button"
-            aria-label="Profile"
-          >
-            <img
-              src={assets.Cicon}
-              alt="Profile"
-            />
-          </button>
-
-          <div className="profile-dropdown">
-
-            <Link to="/profile">
-              Profile
-            </Link>
-
-            <Link to="/orders">
-              Orders
-            </Link>
-
-            <button type="button">
-              Logout
+            <button
+              className="nav-icon-button profile-button"
+              type="button"
+              aria-label="Profile"
+            >
+              <img
+                src={assets.Cicon}
+                alt="Profile"
+              />
             </button>
 
+            <div className="profile-dropdown">
+
+              <Link to="/profile">
+                Profile
+              </Link>
+
+              <Link to="/orders">
+                Orders
+              </Link>
+
+              <button
+                type="button"
+                onClick={() => {
+                  setLogin(false);
+                  navigate('/');
+                }}
+              >
+                Logout
+              </button>
+
+            </div>
+
           </div>
+        )}
 
-        </div>
 
-
-        {/* Cart */}
+        {/* ================= CART ================= */}
 
         <Link
           to="/cart"
@@ -123,7 +145,7 @@ const Navbar = () => {
         </Link>
 
 
-        {/* Mobile Menu Button */}
+        {/* ================= MOBILE MENU BUTTON ================= */}
 
         <button
           type="button"

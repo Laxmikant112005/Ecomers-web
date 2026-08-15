@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
+
 import Home from './pages/Home';
 import About from './pages/About';
 import Collection from './pages/Collection';
@@ -13,20 +14,54 @@ import Orders from './pages/Orders';
 import Navbar from './components/Navbar';
 
 const App = () => {
+
+  // Authentication state
+  const [login, setLogin] = useState(false);
+
   return (
     <div className="App">
-      <Navbar />
+
+      {/* Pass login state to Navbar */}
+      <Navbar
+        login={login}
+        setLogin={setLogin}
+      />
+
       <Routes>
+
         <Route path="/" element={<Home />} />
+
         <Route path="/about" element={<About />} />
+
         <Route path="/collection" element={<Collection />} />
+
         <Route path="/contact" element={<Contact />} />
-        <Route path="/product/:productId" element={<Product />} />
+
+        <Route
+          path="/product/:productId"
+          element={<Product />}
+        />
+
         <Route path="/cart" element={<Cart />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/placeorder" element={<Placeorder />} />
-        <Route path="/orders" element={<Orders />} />
+
+        {/* Pass setLogin to Login page */}
+        <Route
+          path="/login"
+          element={<Login setLogin={setLogin} />}
+        />
+
+        <Route
+          path="/placeorder"
+          element={<Placeorder />}
+        />
+
+        <Route
+          path="/orders"
+          element={<Orders />}
+        />
+
       </Routes>
+
     </div>
   );
 };
