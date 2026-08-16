@@ -12,6 +12,7 @@ import Cart from './pages/Cart';
 import Login from './pages/Login';
 import Orders from './pages/Orders';
 import Navbar from './components/Navbar';
+import Profile from './pages/Profile';
 
 const App = () => {
 
@@ -30,7 +31,7 @@ const App = () => {
       <Routes>
 
         <Route path="/" element={<Home />} />
-
+        <Route path="/profile" element={<Profile />} />
         <Route path="/about" element={<About />} />
 
         <Route path="/collection" element={<Collection />} />

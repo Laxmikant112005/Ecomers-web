@@ -11,9 +11,11 @@ import Bicon from './Bicon.png'
 import tshert from './teshert_w.webp'
 import Shirt_1 from './Shirt_1.webp'
 import Shirt_2 from'./Shirt_2.webp'
-import Shirt_3 from './Shirt_3.webp'    
+import Shirt_3 from './Shirt_3.webp'   
+import User from './user.png' 
 export const assets = {
     Logo,
+    User,
     Jacket_1,
     Jacket_2,
     Jacket_3,
